@@ -4,23 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-tatic FILE* stream;
-static char separator;
-const char *csv_file = "csv_f.ods";
-
-
-bool read_file(const char *csv_file, char csv_separator)
-{
-    stream = fopen(csv_file, "r");
-    if (stream == 0)
-    {
-        return false;
-    }
-    separator = csv_separator;
-    return true;
-
-}
-
 int
 main(int argc,char *argv[])
 {
@@ -33,4 +16,5 @@ main(int argc,char *argv[])
 	printf("row=%d, col=%d, xpixel=%d, ypixel=%d\n",
 	ws.ws_row,ws.ws_col,ws.ws_xpixel,ws.ws_ypixel);
 	return 0;
+
 }
