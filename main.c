@@ -8,7 +8,9 @@ int GetWidth();
 int GetHeight();
 int main(int argc, char const *argv[])
 {
-  FILE* fd = fopen ("filename.txt", "r");
+  FILE* fd = fopen ("filename.txt", "rw");
+  fputs("i love C programming so much\n", fd);
+  fputs("testcase\n", fd);
   int len = 0;
   while (!feof(fd))
   {
@@ -17,12 +19,11 @@ int main(int argc, char const *argv[])
     {
       len++;
     }
-    /*if (len >= GetHeight())
-    {
-      /* code */
-    }*/
+
     printf("%c", next);
   }
+  fclose(fd);
+
   return 0;
 }
 
